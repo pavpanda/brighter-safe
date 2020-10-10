@@ -1,8 +1,32 @@
 <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="questions.css">
+    <title>Brighter</title>
+</head>
+
 <html>
-<body>
+    <body>
 
-<h1>Questions</h1>
-
-</body>
+        <div class="background">
+            <div class="center-container">
+                <div class="image-container">
+        
+                </div>
+        
+                <div class="card-container">
+                    <h1>Question:</h1>
+                    <h3>sample question</h3>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10">
+                    <div class="next-container">
+                        <button id="next" onclick="onPressNext()">Next &raquo;</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+    </body>
 </html>
