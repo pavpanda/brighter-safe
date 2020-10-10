@@ -32,10 +32,12 @@ body, html{
     width: 100%;
 }
 
-.image-filler{
+.image-container{
     width: 150px;
     height: 150px;
-    background-color: violet;
+    background-image: url(images/suyashmeme.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .button-container{
@@ -64,7 +66,6 @@ body, html{
 
 #signup:hover{
     background-color: rgb(34, 238, 187);
-    color: white;
 }
 
 .detail-container{

@@ -1,8 +1,58 @@
 <!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="basic_info.css">
+    <title>Brighter</title>
+</head>
+
 <html>
 <body>
 
-<h1>Basic Info (name and phone #)</h1>
+<div class="background">
+    <div class="center-container">
+        <div class="image-container">
+
+        </div>
+
+        <div class="info-container" id="info-container">
+            <h1 id="label">Name?</h1>
+            <input type="text" id="input-box" placeholder="Text">
+
+            <div class="next-container">
+                <button id="next" onclick="onPressNext()">Next &raquo;</button>
+            </div>
+        </div>
+    </div>
+</div>    
 
 </body>
+
+<script>
+
+    function onPressNext(){
+        
+        if(document.getElementById("label").innerHTML == "Name?"){
+            //put whatever happens if the user inserts the name and clicks next
+
+            document.getElementById("info-container").style.opacity = '0.0';
+            $(".info-container").addClass("animate");
+            $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                function(event) {
+                    document.getElementById("label").innerHTML = "Phone Number?";
+                    document.getElementById("info-container").style.opacity = '1.0';
+                }
+            );
+        }
+        else{
+            //put whatever happens after phone number is inserted and clicks next here
+            console.log("move")
+        }
+    }
+</script>
+
+
 </html>
