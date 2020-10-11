@@ -34,25 +34,14 @@
         <div class="table-container">
             <h2 class="strong">Strengths</h2>
             <div class="container" id="strength">
-                <div class="drag-block">
-                    How are you doing
-                </div>
-    
-                <div class="drag-block">
-                    b
-                </div>
+   
             </div>
         </div>
 
         <div class="table-container">
             <h2 class="weak">Weakness</h2>
             <div class="container" id="weak">
-                <div class="drag-block">
-                    c
-                </div>
-                <div class="drag-block">
-                    d
-                </div>
+     
             </div>
         </div>
 
@@ -70,7 +59,7 @@
             <div class="padding-container">
                 <div class="card-container">
                     <h3>Notes:</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ut consequatur dignissimos reprehenderit saepe deleniti sunt commodi praesentium, ab rerum assumenda aspernatur aut nostrum nesciunt debitis repudiandae excepturi quam totam.</p>
+                    <p id='note'>Topics, Questions, and Action Items from Notes Will Appear Here After Your Recording</br>In your recording, begin all sentences with "I." Please give this process a minute.</p>
                 </div>
             </div>
 
@@ -85,6 +74,7 @@
 
 <script src="node_modules/dragula/dist/dragula.js"></script>
 <script src="node_modules/dragula/dist/dragula.min.js"></script>
+<script src="dashboard.js"></script>
 
 <script>
     dragula([document.getElementById("strength"), document.getElementById("weak")]);
@@ -102,6 +92,7 @@
     }
 
     function onTestPress(){
+        console.log("clicked!")
         createBox("excersize", "weak")
     }
 

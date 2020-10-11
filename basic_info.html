@@ -59,7 +59,7 @@
 </script>
 
 <script>
-    var name, phoneNumber, email, password;
+    var name, phoneNumber, email, password, emergencyNumber;
     const auth = firebase.auth()
     const db = firebase.firestore()
     const localDb = window.localStorage
@@ -116,8 +116,8 @@
         }
         else if(stageCounter == 3){
             //store phone number here
-            phoneNumber = document.getElementById("input-box").value;
-            console.log(phoneNumber);
+            emergencyNumber = document.getElementById("input-box").value;
+            console.log(emergencyNumber);
             document.getElementById("info-container").style.opacity = '0.0';
             $("#next").prop('disabled', true);
             $(".info-container").addClass("animate");
@@ -170,11 +170,13 @@
             
             localDb.setItem("name",name)
             localDb.setItem("phoneNumber",phoneNumber)
+            localDb.setItem("emergencyNumber", emergencyNumber)
             localDb.setItem("email",email)
             localDb.setItem("password", password)
 
             console.log(localDb.getItem("name"))
             console.log(localDb.getItem("phoneNumber"))
+            console.log(localDb.getItem("emergencyNumber"))
             console.log(localDb.getItem("email"))
             console.log(localDb.getItem("password"))
 
