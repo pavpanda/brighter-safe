@@ -47,7 +47,7 @@
 
     </div>
 
-    <button id="press" onclick="onTestPress()" class="emergency-button">&#9888;</button>
+    <button id="press" class="emergency-button">&#9888;</button>
     
     <div class="overlap-container" id="overlap-container">
                 
@@ -59,7 +59,7 @@
             <div class="padding-container">
                 <div class="card-container">
                     <h3>Notes:</h3>
-                    <p id='note'>Topics, Questions, and Action Items from Notes Will Appear Here After Your Recording</br>In your recording, begin all sentences with "I." Please give this process a minute.</p>
+                    <p id='note'>Topics, Questions, and Action Items from Notes Will Appear Here After Your Recording In your recording, begin all sentences with "I." Please give this process a minute.</p>
                 </div>
             </div>
 
@@ -77,8 +77,7 @@
 <script src="dashboard.js"></script>
 
 <script>
-    dragula([document.getElementById("strength"), document.getElementById("weak")]);
-
+    
     // here's something that will help when you try integrating database data and the UI on the screen. Content represents the mental skill that 
     // the person is weak/strong with, and the category parameter should be either "weak" or "strength" depending on whether the person is 
     // weak or strong with this skill. This function basically creates the draggable box for you with the information you enter
@@ -89,11 +88,6 @@
         div.className = "drag-block"
 
         document.getElementById(category).appendChild(div);
-    }
-
-    function onTestPress(){
-        console.log("clicked!")
-        createBox("excersize", "weak")
     }
 
     var count = 0;

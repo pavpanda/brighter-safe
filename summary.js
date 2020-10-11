@@ -5,8 +5,26 @@ var questions = ["blah","blah","blah"];
 var responses = [[1,"TAYF"],[2,"KA"],[3,"EW"],[4,"SU"],[5,"KIT"],[6,"AFH"],[7,"TAB"],[8,"DSYGA"],[9,"AWYA"],[10,"CFO"]];
 var weaknessestext = []
 var strengthstext = []
-var text_messages = ["", "", "", "", "", "", "", "", "", ""]
-
+const strengthstexts = ["Make sure to keep doing the things you love.",
+                        "Keep exercising, it’s good for your physical and mental health!",
+                        "Satisfaction after eating is good as it’s an important part of your physical health.",
+                        "Keep up the good work; don’t rely on substances to control your mood.",
+                        "It’s great that you’re maintaining social relationships.",
+                        "Asking others for help is a great way to connect with people.",
+                        "Keep taking those breaks. They’re important for your mental health.",
+                        "Keep doing the things you’re good at.",
+                        "It’s good to accept yourself. It’s important for your mental health.",
+                        "Keep caring for those people; empathy is one of the most important things a person can have."]
+const weaknessestexts = ["Try to find an activity that you enjoy.",
+                         "Try to move around more, you’ll find that your mood will improve.",
+                         "Keep a food journal, this is extremely helpful if you’re not satisfied after mealtimes.",
+                         "Try using less, it’s not good for them to control your mood.",
+                         "Try to reach out to people and talk with them. It will be good for you.",
+                         "Try to ask others for help, it’s a great way to connect with people and get the help you need.",
+                         "Try to take more breaks or do more of the things you love during these times.",
+                         "Try to do more things that you’re good at, and if you think there are none, you are most definitely good at something.",
+                         "Try to accept yourself, think of what you like about yourself.",
+                         "Find the people you love and do something for them, no matter how small it may be."]
 function categorize(){
 
     responses[0][0] = localDb.getItem("response0")
@@ -44,17 +62,20 @@ function categorize(){
     localDb.setItem("weaknesses", weaknessestext)
     localDb.setItem("strengths", strengthstext)
 
+    sendAppropriateMessages()
+
 }
 
 function sendAppropriateMessages() {
     const user_phone_number = localDb.getItem("phoneNumber")
     for (var i = 0; i < responses.length; i++) {
-        if (weaknessestext.contains(responses[i][1])) {
-            intelepeerSendSMS(user_phone_number, text_messages[i])
+        if (weaknessestext.includes(responses[i][1])) {
+            setTimeout(intelepeerSendSMS("+1" + user_phone_number, weaknessestexts[i]), 3000)
         }
-        else if (strengthstext.contains(responses[i][1])) {
-            intelepeerSendSMS(user_phone_number, text_messages[i])
+        else if (strengthstext.includes(responses[i][1])) {
+            setTimeout(intelepeerSendSMS("+1" + user_phone_number, strengthstexts[i]), 3000)
         }
+
     }
 
     intelepeerSendSMS(user_phone_number, "what's up??")
@@ -86,6 +107,9 @@ function intelepeerSendSMS(user_number, text) {
 	  body: JSON.stringify({"from": "+14257493678", "to": user_number, "text": text})
 	}).then(res=>res.json())
 	  .then(res => console.log(res));
+}
+document.getElementById("next").onclick = function(){
+    location.href = 'dashboard.html'
 }
 
 categorize();

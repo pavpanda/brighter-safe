@@ -5,7 +5,7 @@ const localDb = window.localStorage
 pastResponses = localDb.getItem("responses")
 console.log(pastResponses)
 
-var responses = [[1,"TAYF"],[2,"KA"],[3,"EW"],[4,"SU"],[5,"KIT"],[6,"AFH"],[7,"TAB"],[8,"DSYGA"],[9,"AWYA"],[10,"CFO"]];
+var responses = [[1,"Talk about feelings"],[2,"Keep active"],[3,"Eat well"],[4,"Substance use"],[5,"Keep in touch"],[6,"Ask for help"],[7,"Take a break"],[8,"Using your skills"],[9,"Acceptance"],[10,"Caring"]];
 
 function categorize(){
 

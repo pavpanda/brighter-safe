@@ -16,6 +16,10 @@ console.log(localDb.getItem("strengths"))
 var weaknesses = localDb.getItem("weaknesses").split(",")
 var strengths = localDb.getItem("strengths").split(",")
 
+var weaknessDragArray = []
+var strengthsDragArray = []
+
+
 // show strengths in strengths column and show weaknesses in weaknesses column
 function createBox(content, category){
     var div = document.createElement("div");
@@ -32,6 +36,33 @@ for (var r = 0; r < weaknesses.length; r++) {
 for (var r = 0; r < strengths.length; r++) {
     createBox(strengths[r], "strength")
 }
+dragula([document.getElementById("strength"), document.getElementById("weak")])
+        .on('drag', function(el){
+            console.log("aaaaaaaaaa")
+        })
+        .on('drop', function(el){
+
+            weaknessDragArray = []
+            strengthsDragArray = []
+
+            console.log("bbbbbbbbbbbbbb")
+            weakDiv = document.querySelector('#weak')
+            strengthDiv = document.querySelector('#strength')
+
+            weakSkills = weakDiv.children;
+            strongSkills = strengthDiv.children;
+            for(i = 0; i < weakSkills.length; i++){
+                weaknessDragArray[i] = weakSkills[i].innerHTML
+            }
+            for(i = 0; i < strongSkills.length; i++){
+                strengthsDragArray[i] = strongSkills[i].innerHTML
+            }
+            localDb.setItem("weakness", weaknessDragArray)
+            localDb.setItem("strengths", strengthsDragArray)
+            console.log(weaknessDragArray)
+            console.log(strengthsDragArray)
+        });
+
 
 // on click listener for note to self (trigger phone call to user)
 document.getElementById("record").addEventListener("click", function() {
@@ -165,7 +196,7 @@ function avayaCallNumber(user_number) {
 
 function avayaNotifyEmergency(emergency_number) {
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
-	xhttp.open("POST", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Calls.json?To=" + user_number + "&Url=http://cloud.zang.io/data/inboundxml/5175120b79a3f1d13a704b757ceff9f2c775c495&From=+15148191895", true);
+	xhttp.open("POST", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Calls.json?To=" + emergency_number + "&Url=http://cloud.zang.io/data/inboundxml/5175120b79a3f1d13a704b757ceff9f2c775c495&From=+15148191895", true);
 	xhttp.setRequestHeader("Authorization", "Basic QUM3NzdjM2UzMmE5MmZlMjMzYWE1OTRmZmI5ZDQ5NzRjNjphNGE3ODYxYjg0ZGE0OTVhOGVmZGM0ZjE1NGU2YzcwZg==")
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send();		   
