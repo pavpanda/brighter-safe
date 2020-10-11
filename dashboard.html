@@ -21,6 +21,14 @@
 
     <h1>Dashboard</h1>
 
+    <div class="top-screen-container">
+        <div class="slide-menu-button" onclick="onClickMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+
     <div class="center-container">
 
         <div class="table-container">
@@ -50,7 +58,29 @@
 
     </div>
 
-    <button id="press" onclick="onTestPress()">test press</button>
+    <button id="press" onclick="onTestPress()" class="emergency-button">&#9888;</button>
+    
+    <div class="overlap-container" id="overlap-container">
+                
+        <div class="menu-container" id="menu-container">
+            <div class="top-container">
+                <div class="image-container"></div>
+            </div>
+
+            <div class="padding-container">
+                <div class="card-container">
+                    <h3>Notes:</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ut consequatur dignissimos reprehenderit saepe deleniti sunt commodi praesentium, ab rerum assumenda aspernatur aut nostrum nesciunt debitis repudiandae excepturi quam totam.</p>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="record" id="record">Start Voice</button>
+            </div>
+            
+        </div>
+    </div>
+
 </div>
 
 <script src="node_modules/dragula/dist/dragula.js"></script>
@@ -73,6 +103,21 @@
 
     function onTestPress(){
         createBox("excersize", "weak")
+    }
+
+    var count = 0;
+    function onClickMenu(x) {
+        x.classList.toggle("change");
+        if(count%2 == 0){
+            document.getElementById("overlap-container").style.opacity = "1"
+            document.getElementById("menu-container").style.flexBasis = "25%"
+            count++
+        }
+        else if(count%2 == 1){
+            document.getElementById("overlap-container").style.opacity = "0"
+            document.getElementById("menu-container").style.flexBasis = "0%"
+            count++
+        }
     }
 </script>
 

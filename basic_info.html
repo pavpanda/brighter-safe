@@ -74,53 +74,91 @@
             name = document.getElementById("input-box").value;
             console.log(name)
             document.getElementById("info-container").style.opacity = '0.0';
-            $(".info-container").prop('disabled', true);
+            $("#next").prop('disabled', true);
             $(".info-container").addClass("animate");
             $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
-                    document.getElementById("label").innerHTML = "Phone Number?";
+                    document.getElementById("label").innerHTML = "Phone number?";
                     document.getElementById("info-container").style.opacity = '1.0';
-                    $(".info-container").prop('disabled', true);
+                    $(".info-container").addClass("animate");
+                    $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                    function(event) {
+                        $("#next").prop('disabled', false);
+                    }
+                    );
                 }
             );
 
             stageCounter++;
+            console.log(stageCounter)
         }
         else if(stageCounter == 2){
             //store phone number here
             phoneNumber = document.getElementById("input-box").value;
             console.log(phoneNumber);
             document.getElementById("info-container").style.opacity = '0.0';
-            $(".info-container").prop('disabled', true);
+            $("#next").prop('disabled', true);
             $(".info-container").addClass("animate");
             $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
-                    document.getElementById("label").innerHTML = "Email?";
+                    document.getElementById("label").innerHTML = "Emergency Contact?";
                     document.getElementById("info-container").style.opacity = '1.0';
-                    $(".info-container").prop('disabled', true);
+                    $(".info-container").addClass("animate");
+                    $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                    function(event) {
+                        $("#next").prop('disabled', false);
+                    }
+                    );
                 }
             );
 
             stageCounter++;
         }
         else if(stageCounter == 3){
-            //store email here
-            email = document.getElementById("input-box").value;
-            console.log(email);
+            //store phone number here
+            phoneNumber = document.getElementById("input-box").value;
+            console.log(phoneNumber);
             document.getElementById("info-container").style.opacity = '0.0';
-            $(".info-container").prop('disabled', true);
+            $("#next").prop('disabled', true);
             $(".info-container").addClass("animate");
             $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
-                    document.getElementById("label").innerHTML = "Password?";
+                    document.getElementById("label").innerHTML = "Email?";
                     document.getElementById("info-container").style.opacity = '1.0';
-                    $(".info-container").prop('disabled', true);
+                    $(".info-container").addClass("animate");
+                    $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                    function(event) {
+                        $("#next").prop('disabled', false);
+                    }
+                    );
                 }
             );
 
             stageCounter++;
         }
         else if(stageCounter == 4){
+            //store email here
+            email = document.getElementById("input-box").value;
+            console.log(email);
+            document.getElementById("info-container").style.opacity = '0.0';
+            $("#next").prop('disabled', true);
+            $(".info-container").addClass("animate");
+            $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                function(event) {
+                    document.getElementById("label").innerHTML = "Password?";
+                    document.getElementById("info-container").style.opacity = '1.0';
+                    $(".info-container").addClass("animate");
+                    $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                    function(event) {
+                        $("#next").prop('disabled', false);
+                    }
+                    );
+                }
+            );
+
+            stageCounter++;
+        }
+        else if(stageCounter == 5){
             password = document.getElementById("input-box").value;
             console.log(password);
             //store things here, transition to questions.html
