@@ -36,10 +36,6 @@
             </div>
         </div>
 
-        <div class="image-container">
-
-        </div>
-
         <div class="table-container">
             <h2 class="weak">Weakness</h2>
             <div class="container" id="weak">
@@ -53,6 +49,8 @@
         </div>
 
     </div>
+
+    <button id="press" onclick="onTestPress()">test press</button>
 </div>
 
 <script src="node_modules/dragula/dist/dragula.js"></script>
@@ -60,6 +58,22 @@
 
 <script>
     dragula([document.getElementById("strength"), document.getElementById("weak")]);
+
+    // here's something that will help when you try integrating database data and the UI on the screen. Content represents the mental skill that 
+    // the person is weak/strong with, and the category parameter should be either "weak" or "strength" depending on whether the person is 
+    // weak or strong with this skill. This function basically creates the draggable box for you with the information you enter
+    // Have fun :))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+    function createBox(content, category){
+        var div = document.createElement("div");
+        div.innerHTML = content;
+        div.className = "drag-block"
+
+        document.getElementById(category).appendChild(div);
+    }
+
+    function onTestPress(){
+        createBox("excersize", "weak")
+    }
 </script>
 
 </body>
