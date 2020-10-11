@@ -102,11 +102,13 @@
         if(count%2 == 0){
             document.getElementById("overlap-container").style.opacity = "1"
             document.getElementById("menu-container").style.flexBasis = "25%"
+            document.getElementById("overlap-container").style.zIndex = "2"
             count++
         }
         else if(count%2 == 1){
             document.getElementById("overlap-container").style.opacity = "0"
             document.getElementById("menu-container").style.flexBasis = "0%"
+            document.getElementById("overlap-container").style.zIndex = "-1"
             count++
         }
     }
