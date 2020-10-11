@@ -68,6 +68,10 @@ body, html{
     background: rgb(34, 238, 187);
     cursor: pointer;
   }
+
+.slider::-webkit-slider-thumb::before {
+    content: "test";
+}
   
 .slider::-moz-range-thumb {
     width: 15px;

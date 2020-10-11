@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <link rel="stylesheet" href="dashboard.css">
+    <link href="node_modules/dragula/dist/dragula.css" rel="stylesheet" />
+    <link href="node_modules/dragula/dist/dragula.min.css" rel="stylesheet" />
     <title>Brighter</title>
 </head>
 
+
+
 <html>
 <body>
+
+    
 
 <div class="background">
 
@@ -17,16 +23,44 @@
 
     <div class="center-container">
 
-        
+        <div class="table-container">
+            <h2 class="strong">Strengths</h2>
+            <div class="container" id="strength">
+                <div class="drag-block">
+                    How are you doing
+                </div>
+    
+                <div class="drag-block">
+                    b
+                </div>
+            </div>
+        </div>
 
         <div class="image-container">
 
         </div>
 
-
+        <div class="table-container">
+            <h2 class="weak">Weakness</h2>
+            <div class="container" id="weak">
+                <div class="drag-block">
+                    c
+                </div>
+                <div class="drag-block">
+                    d
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
+
+<script src="node_modules/dragula/dist/dragula.js"></script>
+<script src="node_modules/dragula/dist/dragula.min.js"></script>
+
+<script>
+    dragula([document.getElementById("strength"), document.getElementById("weak")]);
+</script>
 
 </body>
 </html>

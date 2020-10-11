@@ -20,7 +20,14 @@
                 <div class="card-container">
                     <h1>Question:</h1>
                     <h3>sample question</h3>
-                    <input type="range" min="0" max="100" value="50" class="slider" id="myRange" step="10">
+
+                    
+
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange" list="myList">
+                    <datalist id="myList" style="--list-length: 2;">
+                        <option>1</option>
+                        <option>10</option>
+                    </datalist>
                     <div class="next-container">
                         <button id="next" onclick="onPressNext()">Next &raquo;</button>
                     </div>
