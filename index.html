@@ -21,13 +21,13 @@
                 </div>
     
                 <div class="button-container">
-                    <button id="login">Login</button>
+                    <button id="login" onclick="onPressLogin()">Login</button>
                     <button id="signup">Sign Up</button>
                 </div>
             </div>
         </div>
-    
-        <div class="detail-container">
+
+        <div class="detail-container" id="detail-container">
             <div class="input-container">
                 <label for="email">E-mail</label>
                 <input type="text" id="email" placeholder="xxx@email.com">
@@ -39,7 +39,15 @@
             </div>
         </div>
     </div>
+
+    
 </div>
 
 </body>
+
+<script>
+    function onPressLogin(){
+        document.getElementById("detail-container").style.top = "0%";
+    }
+</script>
 </html>

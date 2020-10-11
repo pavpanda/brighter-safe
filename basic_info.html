@@ -33,24 +33,65 @@
 
 <script>
 
+    var stageCounter = 1;
+
     function onPressNext(){
         
-        if(document.getElementById("label").innerHTML == "Name?"){
+        if(stageCounter == 1){
             //put whatever happens if the user inserts the name and clicks next
+            //store name here
 
             document.getElementById("info-container").style.opacity = '0.0';
+            $(".info-container").prop('disabled', true);
             $(".info-container").addClass("animate");
             $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
                     document.getElementById("label").innerHTML = "Phone Number?";
                     document.getElementById("info-container").style.opacity = '1.0';
+                    $(".info-container").prop('disabled', true);
                 }
             );
+
+            stageCounter++;
         }
-        else{
-            //put whatever happens after phone number is inserted and clicks next here
-            console.log("move")
+        else if(stageCounter == 2){
+            //store phone number here
+
+            document.getElementById("info-container").style.opacity = '0.0';
+            $(".info-container").prop('disabled', true);
+            $(".info-container").addClass("animate");
+            $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                function(event) {
+                    document.getElementById("label").innerHTML = "Email?";
+                    document.getElementById("info-container").style.opacity = '1.0';
+                    $(".info-container").prop('disabled', true);
+                }
+            );
+
+            stageCounter++;
         }
+        else if(stageCounter == 3){
+            //store email here
+
+            document.getElementById("info-container").style.opacity = '0.0';
+            $(".info-container").prop('disabled', true);
+            $(".info-container").addClass("animate");
+            $(".info-container").on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                function(event) {
+                    document.getElementById("label").innerHTML = "Password?";
+                    document.getElementById("info-container").style.opacity = '1.0';
+                    $(".info-container").prop('disabled', true);
+                }
+            );
+
+            stageCounter++;
+        }
+        else if(stageCounter == 4){
+            //store things here, transition to questions.html
+            console.log("end");
+        }
+
+        console.log(stageCounter)
     }
 </script>
 
