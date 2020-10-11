@@ -141,7 +141,7 @@ xhttp.onreadystatechange = function() {
     }
 };
 
-var token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFVUTRNemhDUVVWQk1rTkJNemszUTBNMlFVVTRRekkyUmpWQ056VTJRelUxUTBVeE5EZzFNUSJ9.eyJpc3MiOiJodHRwczovL2RpcmVjdC1wbGF0Zm9ybS5hdXRoMC5jb20vIiwic3ViIjoiS29sNXQ3QXRGZlFlVEYwaXp4UWlyVVhtS0pBcndBYnNAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vcGxhdGZvcm0ucmFtbWVyLmFpIiwiaWF0IjoxNjAyMzgyNDAyLCJleHAiOjE2MDI0Njg4MDIsImF6cCI6IktvbDV0N0F0RmZRZVRGMGl6eFFpclVYbUtKQXJ3QWJzIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.wKgc3lHJ1buuxcGzfid1NzwWs9l3WDcFhL5GPzuDvO7Lvqjc9WzCAyWZNJ5s-DqN-r1QFOvRks_eVy76v64oExTHuGX8kpnmq5BC-NGUhql6khgjx_yDTAHwHVQ8GnXLAoc1T5BJmVYFGBug-tFGGEp23xufwwDwyY7XHQydM3EFpe56-jc7tr1z6wPdOBcT_Pk2VS5H63yRMdo0c-FgxiZ9LPZj_eBp4qoBqpXMgTUYivuxhp9sfqwu_7mvDH24hUMo8f68VulhFJ-DI11TxHYZrhyo5aKeTBDRCh-7nMZXKiVhIcMzO-qeh7-J3iRHLZ0eOHKWsYu_ZBXmqBxivQ"
+var token = "removed_secret"
 
 /////////////////////////////////////////////////////////////////////////////////////
 
@@ -162,7 +162,7 @@ function symblGetAuthKey() {
 	xhttp.send(JSON.stringify({
 	  "type": "application",
 	  "appId": "4b6f6c357437417446665165544630697a7851697255586d4b4a417277416273",
-	  "appSecret": "6b52644d44686a496e444149516636456570426d4677387378464c436457794936396b306e31396243365f762d43325a7a74447644324d4a6d6251646a734156"
+	  "appSecret": "removed_secret"
 	}));
 }
 
@@ -189,7 +189,7 @@ function symblAnalyzeConvo(token, id) {
 function avayaCallNumber(user_number) {
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	xhttp.open("POST", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Calls.json?To=" + user_number + "&Url=https://cloud.zang.io/data/inboundxml/a1b62ca6aa745773a58bc727d027a73dc3412276&From=+15148191895", true);
-	xhttp.setRequestHeader("Authorization", "Basic QUM3NzdjM2UzMmE5MmZlMjMzYWE1OTRmZmI5ZDQ5NzRjNjphNGE3ODYxYjg0ZGE0OTVhOGVmZGM0ZjE1NGU2YzcwZg==")
+	xhttp.setRequestHeader("Authorization", "Basic removed_secret")
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send();		
 }
@@ -197,7 +197,7 @@ function avayaCallNumber(user_number) {
 function avayaNotifyEmergency(emergency_number) {
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	xhttp.open("POST", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Calls.json?To=" + emergency_number + "&Url=http://cloud.zang.io/data/inboundxml/5175120b79a3f1d13a704b757ceff9f2c775c495&From=+15148191895", true);
-	xhttp.setRequestHeader("Authorization", "Basic QUM3NzdjM2UzMmE5MmZlMjMzYWE1OTRmZmI5ZDQ5NzRjNjphNGE3ODYxYjg0ZGE0OTVhOGVmZGM0ZjE1NGU2YzcwZg==")
+	xhttp.setRequestHeader("Authorization", "Basic removed_secret")
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send();		   
 }
@@ -206,7 +206,7 @@ function avayaNotifyEmergency(emergency_number) {
 function avayaTranscribeAudioUrl(url) {
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	xhttp.open("POST", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Transcriptions.json?AudioUrl=" + url + "&TranscribeCallback=https://webhook.site/d5fb9213-d04b-45fc-8196-ef72c1059acb", true);
-	xhttp.setRequestHeader("Authorization", "Basic QUM3NzdjM2UzMmE5MmZlMjMzYWE1OTRmZmI5ZDQ5NzRjNjphNGE3ODYxYjg0ZGE0OTVhOGVmZGM0ZjE1NGU2YzcwZg==")
+	xhttp.setRequestHeader("Authorization", "Basic removed_secret")
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send();	
 }
@@ -214,7 +214,7 @@ function avayaTranscribeAudioUrl(url) {
 function avayaGetRecordings() {
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	xhttp.open("GET", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Recordings", true);
-	xhttp.setRequestHeader("Authorization", "Basic QUM3NzdjM2UzMmE5MmZlMjMzYWE1OTRmZmI5ZDQ5NzRjNjphNGE3ODYxYjg0ZGE0OTVhOGVmZGM0ZjE1NGU2YzcwZg==")
+	xhttp.setRequestHeader("Authorization", "Basic removed_secret")
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send();	
 }
@@ -222,7 +222,7 @@ function avayaGetRecordings() {
 function avayaGetTranscription(transcription_id) {
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	xhttp.open("GET", proxyurl + "https://api.zang.io/v2/Accounts/AC777c3e32a92fe233aa594ffb9d4974c6/Transcriptions/" + transcription_id + ".json", true);
-	xhttp.setRequestHeader("Authorization", "Basic QUM3NzdjM2UzMmE5MmZlMjMzYWE1OTRmZmI5ZDQ5NzRjNjphNGE3ODYxYjg0ZGE0OTVhOGVmZGM0ZjE1NGU2YzcwZg==")
+	xhttp.setRequestHeader("Authorization", "Basic removed_secret")
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send();
 }
