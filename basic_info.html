@@ -30,8 +30,39 @@
 </div>    
 
 </body>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRGYOwBpXbb_Gw_uHS3CglpHNx8rA4ZbI",
+        authDomain: "brighterdatabase.firebaseapp.com",
+        databaseURL: "https://brighterdatabase.firebaseio.com/",
+        projectId: "brighterdatabase",
+        storageBucket: "brighterdatabase.appspot.com",
+        messagingSenderId: "659679043417",
+        appId: "1:659679043417:web:dd86641a6f8c4b21917648",
+        measurementId: "G-BJC570GJNQ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    
+</script>
 
 <script>
+    var name, phoneNumber, email, password;
+    const auth = firebase.auth()
+    const db = firebase.firestore()
+    const localDb = window.localStorage
 
     var stageCounter = 1;
 
@@ -40,7 +71,8 @@
         if(stageCounter == 1){
             //put whatever happens if the user inserts the name and clicks next
             //store name here
-
+            name = document.getElementById("input-box").value;
+            console.log(name)
             document.getElementById("info-container").style.opacity = '0.0';
             $(".info-container").prop('disabled', true);
             $(".info-container").addClass("animate");
@@ -56,7 +88,8 @@
         }
         else if(stageCounter == 2){
             //store phone number here
-
+            phoneNumber = document.getElementById("input-box").value;
+            console.log(phoneNumber);
             document.getElementById("info-container").style.opacity = '0.0';
             $(".info-container").prop('disabled', true);
             $(".info-container").addClass("animate");
@@ -72,7 +105,8 @@
         }
         else if(stageCounter == 3){
             //store email here
-
+            email = document.getElementById("input-box").value;
+            console.log(email);
             document.getElementById("info-container").style.opacity = '0.0';
             $(".info-container").prop('disabled', true);
             $(".info-container").addClass("animate");
@@ -87,13 +121,30 @@
             stageCounter++;
         }
         else if(stageCounter == 4){
+            password = document.getElementById("input-box").value;
+            console.log(password);
             //store things here, transition to questions.html
             console.log("end");
+            console.log(stageCounter)
+            console.log(email)
+            console.log(password)
+
+            
+            localDb.setItem("name",name)
+            localDb.setItem("phoneNumber",phoneNumber)
+            localDb.setItem("email",email)
+            localDb.setItem("password", password)
+
+            console.log(localDb.getItem("name"))
+            console.log(localDb.getItem("phoneNumber"))
+            console.log(localDb.getItem("email"))
+            console.log(localDb.getItem("password"))
+
+
+            location.href = 'questions.html'
         }
-
-        console.log(stageCounter)
     }
+    
 </script>
-
 
 </html>
