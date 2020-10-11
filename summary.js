@@ -77,8 +77,6 @@ function sendAppropriateMessages() {
         }
 
     }
-
-    intelepeerSendSMS(user_phone_number, "what's up??")
 }
 // INTELEPEER
 
@@ -86,8 +84,8 @@ function intelepeerGetToken() {
 	xhttp.open("POST", "https://atmosphere.intelepeer.com/_rest/v4/authenticate", true);
 	xhttp.setRequestHeader("Content-Type", "application/json");
 	xhttp.send(JSON.stringify({
-	    "username": "pandurangi1381@students.d211.org",
-	    "password": "theblackmarker"
+	    "username": "email_removed",
+	    "password": "pw_removed"
 	}));	
 }
 
@@ -100,7 +98,7 @@ function intelepeerSendSMS(user_number, text) {
 	  method: 'post',
 	  headers: {
 	  	'Access-Control-Allow-Origin': "*",
-	  	'Authorization': 'Bearer eyJhbGciOiJSUzI1NiJ9.eyJjaWQiOiI3MTAwMDAzIiwiY3RkIjoxNjAyMzUwNDE5LCJleHAiOjE2MDI0MzY4MTksInNyYyI6ImVDb21tZXJjZSIsInVpZCI6IjVmODFkNWJkMmRlMDI1MTk0ODYzMGNiZCJ9.P441dPLH2DBQYbEaccRrq5xEapsxqpRqL5clWuBFu_mgvobmfPIDrgi6iFMC3GOcCXp5kwgEnvFMyzYCvMVH9Q',
+	  	'Authorization': 'Bearer removed',
 	    'Accept': 'application/json',
 	    'Content-Type': 'application/json'
 	  },
